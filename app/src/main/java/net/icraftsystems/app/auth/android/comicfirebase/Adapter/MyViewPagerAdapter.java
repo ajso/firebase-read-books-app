@@ -47,7 +47,7 @@ public class MyViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
         View image_layout = inflater.inflate(R.layout.view_pager_item,container,false);
-        PhotoView page_image = (PhotoView)image_layout.findViewById(R.id.pager_image);
+        PhotoView page_image = image_layout.findViewById(R.id.pager_image);
         Picasso.get().load(imageLinks.get(position)).into(page_image);
 
         container.addView(image_layout);

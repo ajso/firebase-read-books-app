@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import net.icraftsystems.app.auth.android.comicfirebase.ChapterActivity;
 import net.icraftsystems.app.auth.android.comicfirebase.Common.Common;
 import net.icraftsystems.app.auth.android.comicfirebase.Interface.IRecyclerItemClickListener;
 import net.icraftsystems.app.auth.android.comicfirebase.Model.Chapter;
@@ -69,14 +68,14 @@ public class MyChapterAdapter extends RecyclerView.Adapter<MyChapterAdapter.MyVi
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            txt_chapter_numb=(TextView)itemView.findViewById(R.id.txt_chapter_numb);
+            txt_chapter_numb = itemView.findViewById(R.id.txt_chapter_numb);
 
             itemView.setOnClickListener(this);
         }
 
         @Override
-        public void onClick(View v) {
-            recyclerItemClickListener.onClick(v, getAdapterPosition());
+        public void onClick(View view) {
+            recyclerItemClickListener.onClick(view, getAdapterPosition());
         }
     }
 }

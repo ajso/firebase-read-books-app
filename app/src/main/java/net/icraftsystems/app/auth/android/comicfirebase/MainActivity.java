@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
         if (!swipeRefreshLayout.isRefreshing())
         alertDialog.show();
 
-                comics.addListenerForSingleValueEvent(new ValueEventListener() {
+            comics.addListenerForSingleValueEvent(new ValueEventListener() {
             List<Comic> comic_load =new ArrayList<>();
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

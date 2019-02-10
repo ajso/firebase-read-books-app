@@ -7,7 +7,7 @@ import android.widget.TextView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.*;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import net.icraftsystems.app.auth.android.comicfirebase.Adapter.MyChapterAdapter;
 import net.icraftsystems.app.auth.android.comicfirebase.Common.Common;
@@ -26,16 +26,18 @@ public class ChapterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chapter);
 
         //view
-        txt_chapter_name = (TextView)findViewById(R.id.txt_chapter_name);
-        recycler_chapter = (RecyclerView)findViewById(R.id.recycler_chapter);
+        txt_chapter_name = findViewById(R.id.txt_chapter_name);
+        recycler_chapter = findViewById(R.id.recycler_chapter);
         recycler_chapter.setHasFixedSize(true);
+
         layoutManager=new LinearLayoutManager(this);
         recycler_chapter.setLayoutManager(layoutManager);
         recycler_chapter.addItemDecoration(new DividerItemDecoration(this,layoutManager.getOrientation()));
 
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(Common.comicSelected.Name);
+
         //set Icon
         toolbar.setNavigationIcon(R.drawable.ic_chevron_left_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
