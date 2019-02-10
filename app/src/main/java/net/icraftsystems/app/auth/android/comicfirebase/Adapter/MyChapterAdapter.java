@@ -75,8 +75,8 @@ public class MyChapterAdapter extends RecyclerView.Adapter<MyChapterAdapter.MyVi
         }
 
         @Override
-        public void onClick(View v) {
-            recyclerItemClickListener.onClick(v, getAdapterPosition());
+        public void onClick(View view) {
+            recyclerItemClickListener.onClick(view, getAdapterPosition());
         }
     }
 }
