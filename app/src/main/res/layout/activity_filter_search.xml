@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    tools:context=".FilterSearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="4"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:text="ALL COMICS"
+                android:textSize="24sp"
+                android:layout_weight="2"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:background="@drawable/horizontal_line"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_filter_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_nav"
+        android:background="@color/columnColor"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
+        android:layout_height="wrap_content">
+
+
+    </android.support.design.widget.BottomNavigationView>
+
+</RelativeLayout>

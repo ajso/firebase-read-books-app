@@ -1,5 +1,6 @@
 package net.icraftsystems.app.auth.android.comicfirebase;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
     RecyclerView recycler_comic;
     TextView txt_comic;
 
+    ImageView filter_search;
+
     //Database
     DatabaseReference banners, comics;
     //Listener
@@ -57,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
         //init Listener
         bannerListener = this;
         comicListListner = this;
+
+        filter_search = findViewById(R.id.btn_show_filter_search);
+        filter_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FilterSearchActivity.class));
+            }
+        });
 
         slider= (Slider)findViewById(R.id.slder);
         Slider.init(new PicassoLoadingService());
